@@ -29,8 +29,9 @@ public class Ressources {
         if (bois>=10){
             this.bois -= 10;
             System.out.println("Vous avez crée une mine et débloquer la ressource pierre (-10 bois).");
-        }
+        } else {
         System.out.println("Vous devez augmenter vos ressources en bois");
+        }
     }
 
     public void workMine() {
@@ -64,10 +65,9 @@ public class Ressources {
             this.pierre -= 100;
             this.or -= 200;
             this.habitants -= 40;
-            System.out.println("Vous avez construit un château, partie gagné!.");
-        }
-        System.out.println("Vous devez augmenter toutes vos ressources");
-
+            System.out.println("Vous avez construit un château, YOU WINNN !.");
+        }else { System.out.println("Vous devez augmenter toutes vos ressources");}
+        
     }
 
     public void deleteFood (){

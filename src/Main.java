@@ -7,6 +7,7 @@ public class Main {
         int choice = 0;
         Scanner scanner = new Scanner(System.in);
         Ressources Ressources = new Ressources();
+        int count =0;
         do {
 
             System.out.println("Ressources actuel : " + Ressources.bois + " bois, " + Ressources.pierre + " pierre, "
@@ -60,12 +61,14 @@ public class Main {
                     break;
                 case 6:
                     Ressources.buildCastle();
+                    System.out.println("vous avez terminé la partie en " + count + " tours de jeu");
                     break;
                 default:
                     System.out.println("Merci d'avoir joué !");
             }
             Ressources.deleteFood();
             Ressources.gameOver();
+            count ++;
 
         } while (choice != 7 && !Ressources.gameOverO);
 
