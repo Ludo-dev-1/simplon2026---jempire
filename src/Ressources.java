@@ -52,7 +52,7 @@ public class Ressources {
     }
 
     public void recruitSoldier() {
-        if (or > 30) {
+        if (or >= 30) {
             this.habitants += 1;
             this.or -= 30;
             System.out.println("Vous avez recruté un soldat, ajoute 1 habitant et consomme 30 or.");
@@ -136,7 +136,6 @@ public class Ressources {
        int randomFood = 5 + (int)(Math.random() * 10);
         this.bois += randomWood * habitants;
         this.nourriture += randomFood * habitants;
-        System.out.println("Vous avez trouvé un coffre et gagné " +randomWood+ " bois, " + randomFood + " nourriture");
     }
     public void generateChestForest() {
         double valueDouble = Math.random();
