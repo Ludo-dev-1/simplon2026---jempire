@@ -8,6 +8,7 @@ public class Ressources {
     boolean mineCreate;
     boolean gameOverO;
     boolean fireWood;
+    boolean chest;
 
     public Ressources() {
         this.bois = 0;
@@ -18,6 +19,7 @@ public class Ressources {
         this.mineCreate = false;
         this.gameOverO = false;
         this.fireWood = false;
+        this.chest = false;
     }
 
     public void exploreForest() {
@@ -110,4 +112,36 @@ public class Ressources {
         System.out.println(
                 "Vous avez subis un incendie, vous avez perdu tout votre bois et il vous reste un seul habitant, courage");
     }
+
+    public void chestMine() {
+        int randomor = 2 + (int)(Math.random() * 20);
+       int randomstones = 5 + (int)(Math.random() * 10);
+        this.or += randomor;
+        this.pierre += randomstones;
+        System.out.println("Vous avez trouvé un coffre et gagné " +randomor+ " or, " + randomstones + " pierre");
+    }
+    public void generateChest() {
+        double valueDouble = Math.random();
+        chest = false;
+        if (valueDouble< 0.1){
+            chest = true;
+        } 
+        System.out.println("Chance de trouver un coffre : " + valueDouble*100);
+    }
+    public void chestForest() {
+        int randomWood = 2 + (int)(Math.random() * 20);
+       int randomFood = 5 + (int)(Math.random() * 10);
+        this.bois += randomWood;
+        this.nourriture += randomFood;
+        System.out.println("Vous avez trouvé un coffre et gagné " +randomWood+ " bois, " + randomFood + " nourriture");
+    }
+    public void generateChestForest() {
+        double valueDouble = Math.random();
+        chest = false;
+        if (valueDouble< 0.1){
+            chest = true;
+        } 
+        System.out.println("Chance de trouver un coffre dans la forêt : " + valueDouble*100);
+    }
 }
+

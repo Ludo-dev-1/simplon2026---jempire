@@ -7,7 +7,8 @@ public class Main {
         int choice = 0;
         Scanner scanner = new Scanner(System.in);
         Ressources Ressources = new Ressources();
-        int count =0;
+        int count = 0;
+        int countMine = 0;
         do {
 
             System.out.println("Ressources actuel : " + Ressources.bois + " bois, " + Ressources.pierre + " pierre, "
@@ -28,6 +29,10 @@ public class Main {
 
             switch (choice) {
                 case 1:
+                    Ressources.generateChestForest();
+                    if (Ressources.chest) {
+                        Ressources.chestForest();
+                    }
                     Ressources.exploreForest();
                     break;
                 case 2:
@@ -35,6 +40,10 @@ public class Main {
                     Ressources.mineCreate = true;
                     break;
                 case 3:
+                    Ressources.generateChest();
+                    if (Ressources.chest) {
+                        Ressources.chestMine();
+                    }
                     if (Ressources.mineCreate = false || Ressources.nourriture <= 5) {
                         if (Ressources.mineCreate = false) {
 
@@ -45,6 +54,8 @@ public class Main {
                         }
                     } else {
                         Ressources.workMine();
+                        countMine++;
+                        System.out.println("Vous avez travaillé dans la mine " + countMine + " fois");
                     }
                     break;
                 case 4:
@@ -68,10 +79,10 @@ public class Main {
             }
             Ressources.deleteFood();
             Ressources.gameOver();
-            count ++;
+            count++;
             System.out.println("Vous avez fait" + count + " tours");
             Ressources.generateInt();
-            if(Ressources.fireWood){
+            if (Ressources.fireWood) {
                 Ressources.fire();
             }
 
