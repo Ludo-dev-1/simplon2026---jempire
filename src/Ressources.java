@@ -1,3 +1,4 @@
+
 public class Ressources {
     int bois;
     int pierre;
@@ -6,6 +7,7 @@ public class Ressources {
     int habitants;
     boolean mineCreate;
     boolean gameOverO;
+    boolean fireWood;
 
     public Ressources() {
         this.bois = 0;
@@ -15,7 +17,7 @@ public class Ressources {
         this.habitants = 1;
         this.mineCreate = false;
         this.gameOverO = false;
-
+        this.fireWood = false;
     }
 
     public void exploreForest() {
@@ -26,11 +28,11 @@ public class Ressources {
     }
 
     public void mine() {
-        if (bois>=10){
+        if (bois >= 10) {
             this.bois -= 10;
             System.out.println("Vous avez crée une mine et débloquer la ressource pierre (-10 bois).");
         } else {
-        System.out.println("Vous devez augmenter vos ressources en bois");
+            System.out.println("Vous devez augmenter vos ressources en bois");
         }
     }
 
@@ -51,7 +53,7 @@ public class Ressources {
     }
 
     public void commerce() {
-        if(pierre > 5){
+        if (pierre > 5) {
             this.or += 10;
             this.pierre -= 5;
             System.out.println("Vous avez fait du commerce et gagné 10 or en échange de 5 pierre.");
@@ -59,34 +61,52 @@ public class Ressources {
     }
 
     public void buildCastle() {
-        if(bois >= 100 || pierre>=100 || or>=200 || habitants>40 ){
+        if (bois >= 100 || pierre >= 100 || or >= 200 || habitants > 40) {
 
             this.bois -= 100;
             this.pierre -= 100;
             this.or -= 200;
             this.habitants -= 40;
             System.out.println("Vous avez construit un château, YOU WINNN !.");
-        }else { System.out.println("Vous devez augmenter toutes vos ressources");}
-        
-    }
-
-    public void deleteFood (){
-        if(habitants>nourriture) {
-            int killHabitants = habitants-nourriture;
-            habitants -=killHabitants;
-            System.out.println("Vous n'avez pas assez de nourriture pour subvenir au besoin de vos habitants, vous avez perdu"+ killHabitants+ " habitants");
+        } else {
+            System.out.println("Vous devez augmenter toutes vos ressources");
         }
-      
-        this.nourriture -= 1 * habitants;
-        System.out.println("Vous avez fini un tour de jeu mais les habitants ont mangé, vous avez perdu "+ (habitants) +" de nourritures" );
+
     }
 
-    public void gameOver (){
-        if(habitants==0) {
+    public void deleteFood() {
+        if (habitants > nourriture) {
+            int killHabitants = habitants - nourriture;
+            habitants -= killHabitants;
+            System.out.println(
+                    "Vous n'avez pas assez de nourriture pour subvenir au besoin de vos habitants, vous avez perdu"
+                            + killHabitants + " habitants");
+        }
+
+        this.nourriture -= 1 * habitants;
+        System.out.println("Vous avez fini un tour de jeu mais les habitants ont mangé, vous avez perdu " + (habitants)
+                + " de nourritures");
+    }
+
+    public void gameOver() {
+        if (habitants == 0) {
             System.out.println("GAME OVER");
             gameOverO = true;
         }
-        
-       
+    }
+
+    public void generateInt() {
+        double valueDouble = Math.random();
+        if (valueDouble< 0.001){
+            fireWood = true;
+        } 
+        System.out.println("Random int value: " + valueDouble*100);
+    }
+
+    public void fire() {
+        this.bois -= bois;
+        this.habitants = 1;
+        System.out.println(
+                "Vous avez subis un incendie, vous avez perdu tout votre bois et il vous reste un seul habitant, courage");
     }
 }

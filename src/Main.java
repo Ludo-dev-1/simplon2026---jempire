@@ -69,6 +69,11 @@ public class Main {
             Ressources.deleteFood();
             Ressources.gameOver();
             count ++;
+            System.out.println("Vous avez fait" + count + " tours");
+            Ressources.generateInt();
+            if(Ressources.fireWood){
+                Ressources.fire();
+            }
 
         } while (choice != 7 && !Ressources.gameOverO);
 
