@@ -97,6 +97,7 @@ public class Ressources {
 
     public void generateInt() {
         double valueDouble = Math.random();
+        fireWood = false;
         if (valueDouble< 0.001){
             fireWood = true;
         } 
