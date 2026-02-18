@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Bienvenue dans le jeu de gestion de ressources !");
+        System.out.println("Bienvenue dans Jempire !");
         int choice = 0;
         Scanner scanner = new Scanner(System.in);
         Ressources Ressources = new Ressources();

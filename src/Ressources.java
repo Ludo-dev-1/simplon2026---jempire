@@ -74,7 +74,7 @@ public class Ressources {
             this.pierre -= 100;
             this.or -= 200;
             this.habitants -= 40;
-            System.out.println("Vous avez construit un château, YOU WINNN !.");
+            System.out.println("Vous avez construit un château, YOU WIN !.");
         } else {
             System.out.println("Vous devez augmenter toutes vos ressources");
         }
@@ -108,7 +108,6 @@ public class Ressources {
         if (valueDouble< 0.001){
             fireWood = true;
         } 
-        System.out.println(" fire value " + valueDouble*100);
     }
 
     public void fire() {
@@ -131,7 +130,6 @@ public class Ressources {
         if (valueDouble< 0.1){
             chest = true;
         } 
-        System.out.println("Chance de trouver un coffre : " + valueDouble*100);
     }
     public void chestForest() {
         int randomWood = 2 + (int)(Math.random() * 20);
@@ -146,7 +144,6 @@ public class Ressources {
         if (valueDouble< 0.1){
             chest = true;
         } 
-        System.out.println("Chance de trouver un coffre dans la forêt : " + valueDouble*100);
     }
 
     public void generateCovid (){
@@ -155,7 +152,6 @@ public class Ressources {
         if (valueDoubleCovid< 0.01){
             covid = true;
         } 
-        System.out.println(" Covid value: " + valueDoubleCovid*100);
     }
 
      public void covidEpidemi() {
@@ -171,7 +167,6 @@ public class Ressources {
         if (valueDoubleWolf< 0.01){
             wolfForest = true;
         } 
-        System.out.println(" Wolf value: " + valueDoubleWolf*100);
     }
 
      public void wolf() {
