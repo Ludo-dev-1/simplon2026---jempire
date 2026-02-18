@@ -6,7 +6,7 @@ Bienvenue dans **Empire** ! Un jeu de gestion stratégique où vous devez constr
 
 Empire est un jeu de gestion de ressources textuel en Java. L'objectif est de **construire un château** en accumulant suffisamment de ressources tout en gérant vos habitants et en évitant la famine.
 
-## 🎮 Objectif du Jeu
+## Objectif du Jeu
 
 **Construire un château** en réunissant les conditions suivantes :
 - 100 bois minimum
@@ -14,7 +14,7 @@ Empire est un jeu de gestion de ressources textuel en Java. L'objectif est de **
 - 200 or minimum
 - 40 habitants minimum
 
-## 🚀 Ressources Disponibles
+## Ressources Disponibles
 
 | Ressource | Description | Valeur Initiale |
 | **Bois** | Ressource de base obtenue en explorant | 0 |
