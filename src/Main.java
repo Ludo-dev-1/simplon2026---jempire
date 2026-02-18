@@ -33,6 +33,10 @@ public class Main {
                     if (Ressources.chest) {
                         Ressources.chestForest();
                     }
+                    Ressources.generateWolf();
+                    if ( Ressources.wolfForest){
+                        Ressources.wolf();
+                    }
                     Ressources.exploreForest();
                     break;
                 case 2:
@@ -84,9 +88,13 @@ public class Main {
             Ressources.generateInt();
             if (Ressources.fireWood) {
                 Ressources.fire();
+            } 
+            Ressources.generateCovid();
+            if (Ressources.covid){
+                Ressources.covidEpidemi();
             }
 
-        } while (choice != 7 && !Ressources.gameOverO);
+        } while (choice != 7 && !Ressources.gameOverO && choice !=6);
 
         scanner.close();
 

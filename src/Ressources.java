@@ -9,6 +9,8 @@ public class Ressources {
     boolean gameOverO;
     boolean fireWood;
     boolean chest;
+    boolean covid;
+    boolean wolfForest;
 
     public Ressources() {
         this.bois = 0;
@@ -20,6 +22,8 @@ public class Ressources {
         this.gameOverO = false;
         this.fireWood = false;
         this.chest = false;
+        this.covid = false;
+        this.wolfForest = false;
     }
 
     public void exploreForest() {
@@ -103,7 +107,7 @@ public class Ressources {
         if (valueDouble< 0.001){
             fireWood = true;
         } 
-        System.out.println("Random int value: " + valueDouble*100);
+        System.out.println(" fire value " + valueDouble*100);
     }
 
     public void fire() {
@@ -143,5 +147,37 @@ public class Ressources {
         } 
         System.out.println("Chance de trouver un coffre dans la forêt : " + valueDouble*100);
     }
+
+    public void generateCovid (){
+        double valueDoubleCovid = Math.random();
+        covid = false;
+        if (valueDoubleCovid< 0.01){
+            covid = true;
+        } 
+        System.out.println(" Covid value: " + valueDoubleCovid*100);
+    }
+
+     public void covidEpidemi() {
+         this.habitants = habitants/2;
+        System.out.println(
+                "Vous avez subis une épidémie de covid il vous reste "+ this.habitants +" habitants ");
+    }
+
+    
+    public void generateWolf(){
+        double valueDoubleWolf = Math.random();
+        wolfForest = false;
+        if (valueDoubleWolf< 0.1){
+            wolfForest = true;
+        } 
+        System.out.println(" Wolf value: " + valueDoubleWolf*100);
+    }
+
+     public void wolf() {
+         this.habitants = habitants-1;
+        System.out.println(
+                "Vous avez subis une attaque d'un loup dans la forêt, un habitant à été tué ");
+    }
+
 }
 
