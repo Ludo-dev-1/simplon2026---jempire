@@ -83,8 +83,12 @@ public class Main {
             }
             Ressources.deleteFood();
             Ressources.gameOver();
+            if (count % 10 == 0 && count != 0) {
+    Ressources.habitants += 5;
+        System.out.println("Vous avez gagné 5 habitants grâce à votre développement !");
+    }
             count++;
-            System.out.println("Vous avez fait" + count + " tours");
+            System.out.println("Vous avez fait " + count + " tours");
             Ressources.generateInt();
             if (Ressources.fireWood) {
                 Ressources.fire();

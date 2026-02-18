@@ -12,6 +12,7 @@ public class Ressources {
     boolean covid;
     boolean wolfForest;
 
+
     public Ressources() {
         this.bois = 0;
         this.pierre = 0;
@@ -30,7 +31,7 @@ public class Ressources {
         this.bois += 5;
         this.nourriture += 3 * habitants;
 
-        System.out.println("Vous avez exploré la forêt et récolté 5 bois et 3 nourriture.");
+        System.out.println("Vous avez exploré la forêt et récolté 5 bois et " + (3 * habitants) + " nourriture.");
     }
 
     public void mine() {
@@ -120,8 +121,8 @@ public class Ressources {
     public void chestMine() {
         int randomor = 2 + (int)(Math.random() * 20);
        int randomstones = 5 + (int)(Math.random() * 10);
-        this.or += randomor;
-        this.pierre += randomstones;
+        this.or += randomor * habitants;
+        this.pierre += randomstones * habitants;
         System.out.println("Vous avez trouvé un coffre et gagné " +randomor+ " or, " + randomstones + " pierre");
     }
     public void generateChest() {
@@ -135,8 +136,8 @@ public class Ressources {
     public void chestForest() {
         int randomWood = 2 + (int)(Math.random() * 20);
        int randomFood = 5 + (int)(Math.random() * 10);
-        this.bois += randomWood;
-        this.nourriture += randomFood;
+        this.bois += randomWood * habitants;
+        this.nourriture += randomFood * habitants;
         System.out.println("Vous avez trouvé un coffre et gagné " +randomWood+ " bois, " + randomFood + " nourriture");
     }
     public void generateChestForest() {
@@ -167,7 +168,7 @@ public class Ressources {
     public void generateWolf(){
         double valueDoubleWolf = Math.random();
         wolfForest = false;
-        if (valueDoubleWolf< 0.1){
+        if (valueDoubleWolf< 0.01){
             wolfForest = true;
         } 
         System.out.println(" Wolf value: " + valueDoubleWolf*100);
@@ -178,6 +179,5 @@ public class Ressources {
         System.out.println(
                 "Vous avez subis une attaque d'un loup dans la forêt, un habitant à été tué ");
     }
-
 }
 
